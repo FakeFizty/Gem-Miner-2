@@ -12,7 +12,9 @@ Gem Miner 2 is a game about Mining Gems using Miners, that you buy along the way
 
 ## How to Download, Installation process and More!
  - **Download Latest Release:** **[Gem-Miner-2-Latest.zip](https://github.com/FakeFizty/get-download/blob/main/Gem%20Miner%202%20v0.9.zip?raw=true)**
- - **After downloading**, extract the zip file into a **new folder**, named **any way you want.** Then run the **GemMiner2.bat**
+ - **After downloading**, extract the zip file into a **new folder**, named **any way you want.** Then run the **GemMiner2.bat.** That should remove some files automatically, so dont panic.
+
+Gem Miner local files are located in your System Drive, so installing new updates is easy as just doing what is explained above.
 
 It is recommended to download the game from the link. Downloading the file from this repository manually without link may result in script corruption because GitHub may not support specific characters used in Gem Miner 2.
 
