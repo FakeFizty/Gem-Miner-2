@@ -1,7 +1,7 @@
 <div align="center">
 <h1>Gem Miner 2 💎⛏</h1>
 
-#### _Latest Version: v0.9.1_
+#### _Latest Version: v0.9.2_
 
 ##### _Copyright (C) 2023, FakeFizty Studios_
 
