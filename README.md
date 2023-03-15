@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Gem Miner 2</h1>
+<h1>Gem Miner 2 💎⛏</h1>
 
 ##### _Copyright (C) 2023, FakeFizty Studios_
 
