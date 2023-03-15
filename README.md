@@ -16,7 +16,7 @@ Gem Miner 2 is a game about Mining Gems using Miners, that you buy along the way
 
 Gem Miner local files are located in your System Drive, so installing new updates is easy as just doing what is explained above.
 
-It is recommended to download the game from the link. Downloading the file from this repository manually without link may result in script corruption because GitHub may not support specific characters used in Gem Miner 2.
+It is recommended to download the game from the link above. Downloading the file from this repository manually without using link may result in script corruption because GitHub may not support specific characters used in Gem Miner 2.
 
 This project uses **[ANSI](https://www.robvanderwoude.com/ansi.php)** as a text formatter. It's used to manage displayed text and colors on the console. It's required for almost any display-related feature to work as intended.
 
