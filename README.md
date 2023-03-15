@@ -1,6 +1,8 @@
 <div align="center">
 <h1>Gem Miner 2 💎⛏</h1>
 
+#### _Latest Version: v0.9.1_
+
 ##### _Copyright (C) 2023, FakeFizty Studios_
 
 Gem Miner 2 is a game about Mining Gems using Miners, that you buy along the way, you can Rebirth to gain more and more boost, and Sacrifice all your items that you obtained for a Special Sacrifice Miner or hunt down all Achievements and more! The game is made for Windows 10 or later and does not support Windows 7. Currently Newest Version is Gem Miner 2 v0.9.0
