@@ -20,8 +20,16 @@ It is recommended to download the game from the link above. Downloading the file
 
 This project uses **[ANSI](https://www.robvanderwoude.com/ansi.php)** as a text formatter. It's used to manage displayed text and colors on the console. It's required for almost any display-related feature to work as intended.
 
+## Copyright
+ - Read the [Copyright](https://github.com/FakeFizty/Gem-Miner-2/blob/main/copyright.txt)
+ - Read the [Licence](https://github.com/FakeFizty/Gem-Miner-2/blob/main/license.txt)
+
 ## About
 Gem Miner 2 is a game about Mining Gems using Miners, that you buy along the way, You can Rebirth to gain more and more boost, and Sacrifice all your items that you obtained for a Special Sacrifice Miner or hunt down all Achievements and more! The game is made for Windows 10 or later and does not support Windows 7. Currently Newest Version is Gem Miner 2 v0.9.0.
 
 ## History
 Gem Miner 2 is a sequel to Gem Miner 1 ,but because the code of Gem Miner 1 was very messy i decided to instead make a sequel.
+
+
+## Inspirations
+First part of this README file is inspired by: [136MasterNR](https://github.com/136MasterNR)
