@@ -33,7 +33,8 @@ Gem Miner 2 is a game about Mining Gems using Miners, that you buy along the way
 
 ## History of Gem Miner 2
 Gem Miner 2 is a sequel to Gem Miner 1 ,but because the code of Gem Miner 1 was very messy i decided to instead make a sequel.
-
+<h3>‎ </h3>
+<h3>‎ </h3>
 
 ## Inspirations
 First part of this README file is inspired by: [136MasterNR](https://github.com/136MasterNR)
