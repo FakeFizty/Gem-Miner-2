@@ -13,10 +13,7 @@ Gem Miner 2 is a game about Mining Gems using Miners, that you buy along the way
 </div>
 
 ## How to Download, Installation process, Updating and More!
- - **Download Latest Release (v0.9.6)** [[Changelog](https://github.com/FakeFizty/Gem-Miner-2/releases)]
-   - **Pre-Installed:** [Gem-Miner-2-Latest.zip](https://github.com/FakeFizty/get-download/blob/main/Gem%20Miner%202%20v0.9.6.zip?raw=true)
-   - **Installer:** [Gem-Miner-2-Installer.zip](https://github.com/FakeFizty/get-download/blob/main/gemminer2-installer.zip?raw=true)
-
+ - **Download Latest Release (v0.9.6):** [Gem-Miner-2-Latest.zip](https://github.com/FakeFizty/get-download/blob/main/Gem%20Miner%202%20v0.9.6.zip?raw=true) [[Changelog](https://github.com/FakeFizty/Gem-Miner-2/releases)]
  - **After downloading**, extract the zip file into a **new folder**, named **any way you want** but i would suggest simply naming it **Gem Miner 2** Why? well when updating the game, it will update the files but not the folder where the game is currently located, so even tho you may have Gem Miner 2 v0.9.6, it would still display old version on the folder. Then run the `GemMiner2.bat`. It will probably display warning about the file being dangerous. Simply click **"More Info"** and then **"Start Anyways"**. This happens because my game is not licensed with Microsoft, and because i used too many **"START"** commands, making the system think its a virus. After running the game, it should move some files automatically to new local files folder, so dont panic.
 
 Gem Miner local files are located in your System Drive, so installing new updates is easy as just doing what is explained above.
