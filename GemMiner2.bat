@@ -20,7 +20,7 @@
 :Launcher
 @CHCP 65001 >NUL
 @PROMPT CONSOLE^> 
-@TITLE Gem Miner 2 v0.9.7
+@TITLE Gem Miner 2 v0.9.8
 @ECHO OFF
 setlocal enabledelayedexpansion
 :setup
@@ -37,6 +37,7 @@ if not exist "!localfiles!\data" (md "!localfiles!\data")
 echo set gamelocation=%cd%\%~n0.bat
 )>"!localfiles!\settings\gamelocation.bat"
 call "!localfiles!\settings\gamelocation.bat"
+if exist "!localfiles!\data\DeveloperMode.txt" (goto :maximize)
 :copyright_warning
 if exist "!localfiles!\settings\copyrightread.txt" (goto :checkupdate)
 if exist "%cd%\copyright.txt" (
@@ -136,8 +137,8 @@ goto :variables
 ::Variables
 cls
 echo Setting up default Variables
-set gameversion=0.9.7
-set currentgameversion=0.9.7
+set gameversion=0.9.8
+set currentgameversion=0.9.8
 set startingday=!DATE:~3! = !TIME:~0,-3!
 set /a profit=0
 set /a basictotalprofit=0
@@ -276,18 +277,18 @@ goto :warning
 :warning
 if exist "!localfiles!\settings\warningscreen.bat" (goto :errorcheck)
 cls
-echo %color_red%==============   W A R N I N G   ==============%color_reset%
+echo %color_red%╔═══════════╣   W A R N I N G   ╠═══════════╗%color_reset%
 echo.
 echo Do NOT click any letters that aren't keybinds^^!
 echo Doing that will do %color_red%LOUD *BEEP*%color_reset% sound^^!^^!
 echo.
 echo Lower the volume for your safety^^!
 echo.
-echo %color_red%===============================================%color_reset%
+echo %color_red%╚═══════════════════════════════════════════╝%color_reset%
 pause
 :changekeyboard
 cls
-echo %color_aqua%==============   K E Y B O A R D   ==============%color_reset%
+echo %color_aqua%╔══════════╣   K E Y B O A R D   ╠══════════╗%color_reset%
 echo.
 echo If you %color_aqua%Don't%color_reset% use English keyboard, please switch
 echo to English keyboard in your PC Settings^^!
@@ -297,11 +298,11 @@ echo you to type numbers without holding SHIFT^^!
 echo.
 echo (Or just use %color_aqua%Numpad%color_reset% if you have one)
 echo.
-echo %color_aqua%=================================================%color_reset%
+echo %color_aqua%╚═══════════════════════════════════════════╝%color_reset%
 pause
 :warning2
 cls
-echo %color_red%==============   W A R N I N G   ==============%color_reset%
+echo %color_red%╔═══════════╣   W A R N I N G   ╠═══════════╗%color_reset%
 echo.
 echo When Buying MAX miners with %color_red%MASSIVE Ammount of Gems%color_reset%,
 echo its Possible for the game to %color_red%break^^!%color_reset% There is no fix for 
@@ -313,7 +314,7 @@ echo.
 echo If you find %color_red%any bugs,%color_reset% let me know on my %color_red%GitHub page^^!%color_reset%
 echo Link in game settings
 echo.
-echo %color_red%===============================================%color_reset%
+echo %color_red%╚═══════════════════════════════════════════╝%color_reset%
 pause
 goto :errorcheck
 
@@ -334,7 +335,7 @@ if exist "!localfiles!\settings\autologin.bat" (
     goto :gamecheck
 )
 cls
-echo %color_dark_green%Welcome to Gem Miner 2^^! (v0.9.7) Please log in^^!%color_reset%
+echo %color_dark_green%Welcome to Gem Miner 2^^! (v0.9.8) Please log in^^!%color_reset%
 echo %color_dark_green%[1]^>%color_reset% Login
 echo %color_dark_green%[2]^>%color_reset% Register
 echo %color_dark_green%[3]^>%color_reset% Exit
@@ -478,7 +479,7 @@ goto :gamemenu
 :newgame
 cls
 (
-echo set gameversion=0.9.7
+echo set gameversion=0.9.8
 echo set startingday=!DATE:~3! = !TIME:~0,-3!
 echo set /a Networth=10
 echo set /a Gems=10
@@ -529,7 +530,7 @@ goto :gamemenu
 :update
 cls
 (
-echo set gameversion=0.9.7
+echo set gameversion=0.9.8
 echo set startingday=!startingday!
 echo set /a Networth=!Networth!
 echo set /a Gems=!Gems!
@@ -590,39 +591,41 @@ if !PlaySeconds! equ 0 (
     call :AutoSaveModule
 )
 cls
-echo %color_gems%═════════════╣   M I N I N G   ╠═════════════%color_reset%
+echo %color_gems%╔════════════╣   M I N I N G   ╠════════════╗%color_reset%
 echo.
 echo %color_green%^>%color_reset% You're %color_green%Logged in%color_reset% as %color_green%[!loguse!]%color_reset%^^!
 echo.
 echo %color_gems%^>%color_reset% Your %color_gems%Gems%color_reset%: !Gems!%color_gems%$%color_reset%
 echo.
-echo Basic Gem Miner       = !BasicMinerStatus!
-echo Silver Gem Miner      = !SilverMinerStatus!
-echo Iron Gem Miner        = !IronMinerStatus!
-echo Gold Gem Miner        = !GoldMinerStatus!
-echo Diamond Gem Miner     = !DiamondMinerStatus!
-echo Emerald Gem Miner     = !EmeraldMinerStatus!
-echo Dark Matter Gem Miner = !DarkMatterMinerStatus!
+echo.
+echo ┌ Basic Gem Miners . . . . !BasicMinerStatus!
+echo ├ Silver Gem Miners. . . . !SilverMinerStatus!
+echo ├ Iron Gem Miners. . . . . !IronMinerStatus!
+echo ├ Gold Gem Miners. . . . . !GoldMinerStatus!
+echo ├ Diamond Gem Miners . . . !DiamondMinerStatus!
+echo ├ Emerald Gem Miners . . . !EmeraldMinerStatus!
+echo └ Dark Matter Gem Miners . !DarkMatterMinerStatus!
 echo.
 echo %color_gems%^>%color_reset% Total %color_gems%Profit%color_reset%: !profit!%color_gems%$%color_reset%/s
 echo.
-echo ┌─────────────────────────────────────────┐
-echo │-Options-                                │
-echo │[S] Shop                                 │
-echo │%color_gray%[R] Rebirth (Comming Soon)%color_reset%               │
-echo │%color_gray%[V] Sacrifice (Comming Soon)%color_reset%             │
-echo │[W] Settings                             │
-echo │%color_gray%[E] Stats (Comming Soon)%color_reset%                 │
-echo │%color_gray%[T] Achievements (Comming Soon)%color_reset%          │
-echo │%color_gray%[U] Updates Note (Comming Soon)%color_reset%          │
-echo │[A] Save                                 │
-echo │[Q] Save and Exit                        │
-echo └─────────────────────────────────────────┘
+echo     ┌──────────────────────────────────┐
+echo     │ -Options-                        │
+echo     │ [S] Shop                         │
+echo     │ %color_gray%[R] Rebirth (Comming Soon)%color_reset%       │
+echo     │ %color_gray%[V] Sacrifice (Comming Soon)%color_reset%     │
+echo     │ [W] Settings                     │
+echo     │ %color_gray%[E] Stats (Comming Soon)%color_reset%         │
+echo     │ %color_gray%[T] Achievements (Comming Soon)%color_reset%  │
+echo     │ %color_gray%[U] Updates Note (Comming Soon)%color_reset%  │
+echo     │ [A] Save                         │
+echo     │ [Q] Save and Exit                │
+echo     └──────────────────────────────────┘
 echo.
-echo %color_dark_gray%www.github.com/fakefizty%color_reset%
+echo     %color_dark_gray%╔═    www.github.com/fakefizty    ═╗%color_reset%
+echo     %color_dark_gray%╠═       Gem Miner 2 v0.9.8       ═╣%color_reset%
+echo     %color_dark_gray%╚═     2023 FakeFizty Studios     ═╝%color_reset%
 echo.
-echo %color_dark_gray%Gem Miner 2 v0.9.7%color_reset%
-echo %color_dark_gray%2023 FakeFizty Studios%color_reset%
+echo %color_gems%╚═══════════════════════════════════════════╝%color_reset%
 CHOICE /C XSRVWETUAQ /N /T 1 /D X >nul
 if %errorlevel% equ 1 (
     set /a PlaySeconds=!PlaySeconds! + 1
@@ -664,10 +667,10 @@ if %errorlevel% equ 1 (
 
 :shop
 cls
-echo %color_aqua%═══════════════╣   S H O P   ╠═══════════════%color_reset%
+echo %color_aqua%╔══════════════╣   S H O P   ╠══════════════╗%color_reset%
 echo.
-echo [1] %color_aqua%Miner%color_reset% Shop
-echo [2] %color_aqua%Item%color_reset% Shop
+echo [1] %color_orange%Miner%color_reset% Shop
+echo [2] %color_orange%Item%color_reset% Shop
 echo.
 echo [0] Back
 set /p input=">> "
@@ -680,7 +683,7 @@ goto :shop
 
 :itemshop
 cls
-echo %color_gems%═══════════╣   I T E M   S H O P   ╠═══════════%color_reset%
+echo %color_gems%╔══════════╣   I T E M   S H O P   ╠══════════╗%color_reset%
 echo.
 echo %color_gems%^>%color_reset% Your %color_gems%Gems%color_reset%: !Gems!%color_gems%$%color_reset%
 echo.
@@ -698,7 +701,7 @@ goto :itemshop
 :minershop
 call :MinerShopMaxDisplay
 cls
-echo %color_gems%══════════╣   M I N E R   S H O P   ╠══════════%color_reset%
+echo %color_gems%╔═════════╣   M I N E R   S H O P   ╠═════════╗%color_reset%
 echo.
 echo %color_gems%^>%color_reset% Your %color_gems%Gems%color_reset%: !Gems!%color_gems%$%color_reset%
 echo.
@@ -1778,7 +1781,7 @@ goto :minershop
 :settings
 call :SettingsDisplay
 cls
-echo %color_green%═══════════╣   S E T T I N G S   ╠═══════════%color_reset%
+echo %color_green%╔══════════╣   S E T T I N G S   ╠══════════╗%color_reset%
 echo.
 echo -Features-
 echo [1] !AutoLoginDisplay! = Auto Login %color_gray%(Automatically logs you in your account.)%color_reset%
@@ -1890,7 +1893,7 @@ goto :settings
 
 :settings_credits
 cls
-echo %color_gems%═════╣   C R E D I T S   A N D   A B O U T   ╠═════%color_reset%
+echo %color_gems%╔════╣   C R E D I T S   A N D   A B O U T   ╠════╗%color_reset%
 echo.
 echo -About-
 echo Hey^^! This is my first %color_light_gray%"Proper"%color_reset% game from Batch. I wanted to 
@@ -1918,7 +1921,7 @@ echo %color_green%Colored by:%color_reset% @FakeFizty / @Fisterkoo
 echo %color_aqua%Original Idea by:%color_reset% @FakeFizty / @Fisterkoo
 echo %color_yellow%Logo inspired by:%color_reset% @136MasterNR
 echo.
-echo.
+echo %color_gems%╚═════════════════════════════════════════════════╝%color_reset%
 pause
 goto :settings
 
@@ -1926,7 +1929,7 @@ goto :settings
 
 :settings_adminconsole
 cls
-echo %color_red%════════════╣   C O N S O L E   ╠════════════%color_reset%
+echo %color_red%╔═══════════╣   C O N S O L E   ╠═══════════╗%color_reset%
 echo.
 set /p input="Enter valid console password: "
 if not %input% equ 1938290 (
@@ -1934,7 +1937,7 @@ if not %input% equ 1938290 (
     goto :settings
 )
 cls
-echo %color_red%════════════╣   C O N S O L E   ╠════════════%color_reset%
+echo %color_red%╔═══════════╣   C O N S O L E   ╠═══════════╗%color_reset%
 echo Welcome to the Admin Console^^!
 echo Type %color_red%"back"%color_reset% to return
 echo.
@@ -1957,7 +1960,7 @@ if exist "!localfiles!\settings\windowsversioncheck.bat" (
     pause
     goto :Launcher
 )
-echo %color_red%════════════╣   W A R N I N G   ╠════════════%color_reset%
+echo %color_red%╔═══════════╣   W A R N I N G   ╠═══════════╗%color_reset%
 echo.
 echo Disabling the Windows Version Check may
 echo %color_red%Cause Problems%color_reset%. The windows version check
@@ -1970,7 +1973,7 @@ echo %color_red%sure%color_reset% you are running %color_red%Windows 10 or later
 echo.
 echo Please wait 30 seconds before Confirming...
 echo.
-echo %color_red%═════════════════════════════════════════════%color_reset%
+echo %color_red%╚═══════════════════════════════════════════╝%color_reset%
 timeout /t 30 /nobreak >nul
 cls
 set /p input="Confirm? [y/n]>> "
@@ -2288,7 +2291,7 @@ if exist "!localfiles!\settings\autosave.bat" (
 :SaveModule
 cls
 (
-echo set gameversion=0.9.7
+echo set gameversion=0.9.8
 echo set startingday=!startingday!
 echo set /a Networth=!Networth!
 echo set /a Gems=!Gems!
